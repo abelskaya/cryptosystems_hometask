@@ -12,6 +12,9 @@ contfrac_to_rational (frac),
 
 Идея реализации p-метода Полларда была взята из статьи https://cyberleninka.ru/article/n/realizatsiya-metoda-faktorizatsii-pollarda-na-yazyke-c
 
+Идея реализации (p-1)-метода Полларда на языке С++ была взята отсюда https://e-maxx.ru/algo/factorization и переделана для языка python
+http://window.edu.ru/catalog/pdf2txt/980/73980/53165?p_page=6
+
 В данной реализации рассмотрены атаки:
 -- методом Винера
 -- p-методом Полларда
