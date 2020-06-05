@@ -4,7 +4,7 @@ Rabin_keys.py
 Created by abelskaya.
 Project cryptosystems_hometask
 ----
-
+Генерация ключей системы Рабина
 """
 
 import math
@@ -28,4 +28,6 @@ def cipherRabinKey(nbits=1024, m):
     while m >= n:
         e, n, d = RSA_Keys.generateKeysRSA(256)
 
-    return c = pow(m, e, n)
+    c = pow(m, e, n)
+
+    return c
