@@ -1,6 +1,6 @@
 """
 Math_Functions.py 
-TODO
+
 Created by abelskaya.
 Project cryptosystems_hometask
 ----
@@ -9,7 +9,6 @@ Project cryptosystems_hometask
 
 import math
 import random, sys
-
 
 
 def egcd(a, b):
@@ -51,6 +50,15 @@ def modInverse(e, n):
     e должно быть взаимно просто с n
     '''
     return egcd(e, n)[0] % n
+
+
+def simplenum(n):
+    if n % 2 == 0:
+        return n == 2
+    d = 3
+    while d * d <= n and n % d != 0:
+        d += 2
+    return d * d > n
 
 
 def totient(p, q):
@@ -115,18 +123,17 @@ def is_perfect_square(n):
 
     return -1
 
-def rational_to_contfrac(x,y):
+
+def rational_to_contfrac(x, y):
     '''
     Converts a rational x/y fraction into
     a list of partial quotients [a0, ..., an]
     '''
-    # x = int(x)
-    # y = int(y)
-    a = x//y
+    a = x // y
     pquotients = [a]
     while a * y != x:
-        x,y = y,x-a*y
-        a = x//y
+        x, y = y, x - a * y
+        a = x // y
         pquotients.append(a)
     return pquotients
 
@@ -142,14 +149,15 @@ def convergents_from_contfrac(frac):
     return convs
 
 
-def contfrac_to_rational (frac):
+def contfrac_to_rational(frac):
     '''Converts a finite continued fraction [a0, ..., an]
      to an x/y rational.
      '''
     if len(frac) == 0:
-        return (0,1)
+        return (0, 1)
     num = frac[-1]
     denom = 1
-    for _ in range(-2,-len(frac)-1,-1):
-        num, denom = frac[_]*num+denom, num
-    return (num,denom)
+    for _ in range(-2, -len(frac) - 1, -1):
+        num, denom = frac[_] * num + denom, num
+    return (num, denom)
+

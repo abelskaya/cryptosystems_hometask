@@ -1,14 +1,15 @@
 """
 Miller-Rabin.py 
-TODO
+
 Created by abelskaya.
 Project cryptosystems_hometask
 ----
 Генерация простых чисел при помощи алгоритма Миллера-Рабина
 """
 
-import random
+import random, sys
 import math
+import Math_Functions
 
 
 def miller_rabin_pass(a, s, d, n):
